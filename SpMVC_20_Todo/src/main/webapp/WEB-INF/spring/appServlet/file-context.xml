@@ -23,7 +23,7 @@
 	고용량의 파일을 전송하고 서버를 멈추게 할수 있다
 	( file Bump 공격 )
 	-->
-	<bean 
+	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSizePerFile" value="2000000"/>
 		<property name="maxUploadSize" value="20000000"/>

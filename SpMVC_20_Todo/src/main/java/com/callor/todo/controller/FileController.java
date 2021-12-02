@@ -31,17 +31,10 @@ public class FileController {
 	public String fileUp(
 			String to_title,
 			@RequestParam("to_image") 
-			MultipartFile rev_file) {
-
+			MultipartFile rev_image) {
 		
-		log.debug("TODO", to_title);
-		log.debug("파일", rev_file.getOriginalFilename());
+		log.debug("TODO {}", to_title);
+		log.debug("파일 {}", rev_image.getOriginalFilename());
 		return "redirect:/file";
 	}
-	
-	
-	
-	
-	
-
 }
