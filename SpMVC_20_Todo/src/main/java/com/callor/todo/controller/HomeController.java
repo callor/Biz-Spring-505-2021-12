@@ -45,7 +45,6 @@ public class HomeController {
 			
 		) {
 		
-		
 		fileService.fileUp(to_image);
 		
 		todoList.add(to_text);
@@ -56,5 +55,4 @@ public class HomeController {
 		return "home";
 		
 	}
-	
 }
