@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- 
 	CommonsMultipartResolver 를 설정해 두면
@@ -28,5 +30,22 @@
 		<property name="maxUploadSizePerFile" value="2000000"/>
 		<property name="maxUploadSize" value="20000000"/>
 	</bean>
-
+	
+	<mvc:resources mapping="/files/**"
+			location="
+			file:///C:/bizworks/upload/,
+			file:///Users/callor/Documents/workspace/upload/,
+			/static/files/,
+			/static/images/" 
+			/>
+			
+	<bean id="winPath" class="java.lang.String">
+		<constructor-arg 
+		value="c:/bizworks/upload/"/>
+	</bean>
+	<bean id="macPath" class="java.lang.String">
+		<constructor-arg 
+			value="/Users/callor/Documents/workspace/upload/"/>
+	</bean>
+			
 </beans>

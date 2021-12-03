@@ -4,6 +4,6 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />    
 <table>
 	<c:forEach items="${TODOLIST}" var="TODO">
-	
+		<%@ include file="/WEB-INF/views/todoItem.jsp" %>
 	</c:forEach>
 </table>

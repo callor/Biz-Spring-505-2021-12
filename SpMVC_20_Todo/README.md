@@ -34,6 +34,14 @@ background 에서 HTTP 프로토콜에 파일을 업로드 하는 기능이
 * multiple="multiple" 속성을 추가하면 여러개 파일을 선택할수 있다
 
 
+## bean 등에서 물리적 파일에 접근하기 위한 방법
+* http://localhost:8080
+* https://www.naver.com
+* file:///c:/users/my.txt
+file:// 물리적 파일에 접속하기 위한 프로토콜
+파일열기 프로토콜을 사용하여 로컬디스크 C 드라이브의 /users/ 폴더에 있는 my.txt 파일에 접속하라
+
+
 
 
 

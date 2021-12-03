@@ -11,6 +11,8 @@
 	rel="stylesheet"/>
 <link href="${rootPath}/static/css/todoInput.css?ver=2021-12-03-001"
 	rel="stylesheet"/>
+<link href="${rootPath}/static/css/todoItem.css?ver=2021-12-03-001"
+	rel="stylesheet"/>
 
 </head>
 <body>
@@ -19,7 +21,9 @@
 		<section class="form-wrapper">
 			<%@ include file="/WEB-INF/views/todoInput.jsp" %>
 		</section>
-		<section class="todos-wrapper">리스트</section>
+		<section class="todos-wrapper">
+			<%@ include file="/WEB-INF/views/todoList.jsp" %>
+		</section>
 	</main>
 </body>
 </html>
