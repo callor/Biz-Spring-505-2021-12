@@ -30,4 +30,16 @@
     background: #3bc9db;
 }
 
+div.image_wrapper {
+	cursor: pointer;
+}
+
+div.image_wrapper:hover {
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.7)
+}
+
+input#imgTag {
+	display: none;
+}
+
 
