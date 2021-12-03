@@ -9,7 +9,7 @@
 
 	<mvc:annotation-driven/>
 	<mvc:resources 
-			location="/static" 
+			location="/static/" 
 			mapping="/static/**" />
 	<bean 
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
