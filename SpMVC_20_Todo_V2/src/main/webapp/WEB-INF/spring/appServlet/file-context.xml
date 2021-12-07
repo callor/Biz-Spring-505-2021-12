@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+	CommonsMultipartResolver 를 설정해 두면
+	file 을 업로드 할때
+	background 에서 spring framework 를 도와서 기능이 수행
+	중요 : 업로드할 파일의 크기를 제한하는 속성지정
+	maxUploadSizePerFile : 파일 1개의 크기(용량, 사이즈)
+	maxUploadSize : 여러개의 파일일때 전체 크기
+	PerFile 크기를 설정하고
+	파일 개수를 몇개까지 업로드 할까 계산하여
+	Size = PerFile * 개수 형식으로 계산하여 설정
+	
+	1K = 1024
+	1M = 1024 * 1024 = 1,048,576 = 1,000,000
+	한개의 파일 크기를 최대 2M = 2,000,000
+	최대 2M 파일 10개까지 제한 2M * 10 = 20,0000,0000
+	
+	업로드 가능 크기를 너무 크게하면
+	고용량의 파일을 전송하고 서버를 멈추게 할수 있다
+	( file Bump 공격 )
+	-->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSizePerFile" value="2000000"/>
+		<property name="maxUploadSize" value="20000000"/>
+	</bean>
+	
+	<mvc:resources mapping="/files/**"
+			location="
+			file:///C:/bizworks/upload/,
+			file:///Users/callor/Documents/workspace/upload/,
+			/static/files/,
+			/static/images/" 
+			/>
+			
+	<bean id="winPath" class="java.lang.String">
+		<constructor-arg 
+		value="c:/bizworks/upload/"/>
+	</bean>
+	<bean id="macPath" class="java.lang.String">
+		<constructor-arg 
+			value="/Users/callor/Documents/workspace/upload/"/>
+	</bean>
+			
+</beans>
