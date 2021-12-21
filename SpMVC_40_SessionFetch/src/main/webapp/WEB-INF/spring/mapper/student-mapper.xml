@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.db.dao.StudentDao">
+
+	<select id="findByNames" resultType="StudentVO">
+		SELECT * FROM tbl_student
+		<foreach collection="list" item="stVO" open="WHERE " separator="OR">
+			st_name like CONCAT("%",#{stVO},"%") 
+		</foreach>
+	
+	</select>
+
+
+	<select id="create_table">
+		CREATE TABLE IF NOT EXISTS tbl_student (
+			st_num	VARCHAR(5)	PRIMARY KEY,
+			st_name	VARCHAR(20)	NOT NULL,	
+			st_grade VARCHAR(20)		
+		)
+	</select>
+	
+	<select id="drop_table">
+		DROP TABLE IF EXISTS tbl_student 
+	</select>
+	
+	
+	
+	<insert id="insertAll">
+		INSERT INTO tbl_student(st_num, st_name, st_grade)
+		
+		<foreach collection="list" item="stVO" open="VALUES" separator=",">
+				( #{stVO.st_num}, #{stVO.st_name}, #{stVO.st_grade} )
+		</foreach>
+	</insert>
+	
+</mapper>
