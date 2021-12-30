@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.callor.db.controller.service.StudentService;
 import com.callor.db.dao.StudentDao;
 import com.callor.db.model.StudentVO;
+import com.callor.db.service.StudentService;
 
 import lombok.extern.slf4j.Slf4j;
 

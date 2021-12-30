@@ -1,4 +1,4 @@
-package com.callor.db.controller.service;
+package com.callor.db.service;
 
 import java.util.List;
 
