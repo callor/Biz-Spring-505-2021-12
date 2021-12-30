@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		login.addEventListener("click",function(){
 			const login_option = {
 					method:"POST",
+					credentials:"include",
 					headers : {
 						"Content-Type" :"application/json"
 					},
